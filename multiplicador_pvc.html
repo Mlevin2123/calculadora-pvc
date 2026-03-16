@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Calculadora</title>
+
+<style>
+
+body{
+font-family:Arial;
+padding:40px;
+background:#f4f4f4;
+}
+
+.caja{
+background:white;
+max-width:400px;
+margin:auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+input,button{
+width:100%;
+padding:10px;
+margin-top:10px;
+font-size:16px;
+}
+
+button{
+background:#0077ff;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h3>Calculadora de Precio</h3>
+
+<label>Ancho (m)</label>
+<input type="number" id="ancho" step="0.01">
+
+<label>Alto (m)</label>
+<input type="number" id="alto" step="0.01">
+
+<label>Precio por m²</label>
+<input type="number" id="precio">
+
+<button onclick="calcular()">Calcular</button>
+
+<h2 id="resultado"></h2>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let ancho=document.getElementById("ancho").value;
+let alto=document.getElementById("alto").value;
+let precio=document.getElementById("precio").value;
+
+let area=ancho*alto;
+
+let total=area*precio;
+
+document.getElementById("resultado").innerHTML=
+"Total: $"+Math.round(total);
+
+}
+
+</script>
+
+</body>
+</html>
